@@ -1,3 +1,8 @@
+[Tags: PROJECTS GOLANG DEV]
+[Title: #2 Gorilla Websocket 공식 문서 번역하기]
+[WriteTime: 2023/07/05]
+[ImageNames: ]
+
 ## 개요
 
 > 개인적으로 공부하기 위해 번역한 글이라 의역이 다수 포함되어 있다.

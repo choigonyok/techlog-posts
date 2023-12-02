@@ -1,3 +1,8 @@
+[Tags: KUBERNETES ISTIO]
+[Title: 쿠버네티스 서비스를 외부에 Expose하는 방법]
+[WriteTime: 2023/07/24]
+[ImageNames: ]
+
 ## 개요
 
 쿠버네티스는 베어메탈 클러스터에 로드밸런서 타입 서비스를 지원하지 않는다. 

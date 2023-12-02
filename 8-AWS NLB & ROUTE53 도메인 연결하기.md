@@ -1,3 +1,8 @@
+[Tags: CLOUD PROJECTS]
+[Title: AWS NLB & ROUTE53 도메인 연결하기]
+[WriteTime: 2023/07/20]
+[ImageNames: ]
+
 ## 개요
 
 이 글은 구매와 등록이 된 도메인이 이미 있고, NLB와 서비스가 연결된 상태여서 NLB의 EIP, SIP나 DNSname으로 서비스에 HTTP/HTTPS 접근이 가능한 상태일 때, 

@@ -1,3 +1,8 @@
+[Tags: DEV GOLANG PROJECTS]
+[Title: Gorilla Websocket으로 실시간 채팅 구현하기]
+[WriteTime: 2023/08/04]
+[ImageNames: ]
+
 ## 개요
 
 채팅 기능을 구현했다. 코드의 오류처리는 글의 가독성을 위해 글에서는 삭제시켰다.

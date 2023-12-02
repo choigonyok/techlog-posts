@@ -1,3 +1,8 @@
+[Tags: GOLANG DEV]
+[Title: Golang CPU 사용량 100% 이슈]
+[WriteTime: 2023/10/15]
+[ImageNames: ]
+
 ## Contents
 
 1. Preamble

@@ -1,4 +1,9 @@
-#1','## 개요
+[Tags: PROJECTS GOLANG DEV]
+[Title: #1 Gorilla Websocket 공식 문서 번역하기]
+[WriteTime: 2023/07/04]
+[ImageNames: ]
+
+## 개요
 
 블로그 프로젝트의 다음 프로젝트로 커플 채팅 서비스를 기획하던 중 HTTP 프로토콜의 단점과 이를 개선한 웹소켓 프로토콜의 실시간 통신에 대해 알게 되었다.
 

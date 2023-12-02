@@ -1,3 +1,8 @@
+[Tags: PROJECTS KUBERNETES INFRA]
+[Title: RabbitMQ 쿠버네티스에 배포하기]
+[WriteTime: 2023/10/04]
+[ImageNames: ]
+
 ## 개요
 
 ---

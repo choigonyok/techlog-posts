@@ -1,3 +1,8 @@
+[Tags: INFRA]
+[Title: API Gateway VS L7 LoadBalancer]
+[WriteTime: 2023/07/18]
+[ImageNames: ]
+
 ## 개요
 
 Istio를 공부하던 중, Istio가 API 게이트웨이 기능을 지원한다는 것을 알게되었다. API 게이트웨이가 뭔지 얕게 찾아보니, L7 로드밸런서와 유사한 역할을 맡는다는 것을 알았다. 그렇지만 L7 로드밸런서와 동일하지는 않은 것 같다.

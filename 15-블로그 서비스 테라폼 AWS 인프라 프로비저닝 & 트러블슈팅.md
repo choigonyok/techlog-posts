@@ -1,3 +1,8 @@
+[Tags: INFRA PROJECTS CLOUD]
+[Title: 블로그 서비스 테라폼 AWS 인프라 프로비저닝 & 트러블슈팅]
+[WriteTime: 2023/08/23]
+[ImageNames: ]
+
 ## 개요
 
 운영환경용 도커파일은 작성했으니, 쿠버네티스를 올릴 인프라를 구성해야한다.

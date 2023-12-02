@@ -1,3 +1,8 @@
+[Tags: INFRA KUBERNETES CLOUD]
+[Title: Terraform으로 Kubeadm에서 EKS로 클러스터 이전하기]
+[WriteTime: 2023/11/12]
+[ImageNames: ]
+
 ## Tags
 
 INFRA KUBERNETES TERRAFORM

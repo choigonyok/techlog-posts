@@ -1,3 +1,8 @@
+[Tags: PROJECTS INFRA DEV KUBERNETES]
+[Title: KinD로 로컬 쿠버네티스 구축하기]
+[WriteTime: 2023/09/09]
+[ImageNames: ]
+
 ## 개요
 
 MSA를 쿠버네티스 클러스터에 배포하는 새로운 팀 프로젝트를 기획하고있다.

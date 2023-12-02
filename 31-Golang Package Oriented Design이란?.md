@@ -1,3 +1,8 @@
+[Tags: GOLANG]
+[Title: Golang Package Oriented Design이란?]
+[WriteTime: 2023/11/02]
+[ImageNames: ]
+
 1. ## Preamble
 
 

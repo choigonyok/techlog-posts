@@ -1,3 +1,8 @@
+[Tags: KUBERNETES INFRA]
+[Title: Kubeadm으로 Ubuntu에 쿠버네티스 클러스터 스크래치 구성하기]
+[WriteTime: 2023/6/24]
+[ImageNames: ]
+
 ## 개요
 
 

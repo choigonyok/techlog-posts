@@ -1,3 +1,8 @@
+[Tags: CLOUD]
+[Title: AWS EC2 루트 볼륨, EBS에 대해]
+[WriteTime: 2023/09/01]
+[ImageNames: ]
+
 ## 개요
 
 블로그 리팩토링 게시글 중 하나인 **#9. Terraform Infrastructure Provisioning & Trouble Shooting**에서 Disk Pressure로 인해 볼륨을 확장하는 방법에 대해 알아보았다.

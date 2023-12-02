@@ -1,3 +1,8 @@
+[Tags: ISTIO INFRA PROJECTS]
+[Title: KinD에 Istio Ingress gateway 배포하기]
+[WriteTime: 2023/09/14]
+[ImageNames: ]
+
 ## 개요
 
 지난 글에서는 여러 로컬 쿠버네티스 개발환경 도구들과 그 중 Kind를 선택한 이유, 기본적인 Kind 사용법 및 배포 테스트에 대해 소개했다.

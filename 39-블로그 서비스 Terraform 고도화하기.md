@@ -1,3 +1,8 @@
+[Tags: INFRA PROJECTS CLOUD]
+[Title: 블로그 서비스 Terraform 고도화하기]
+[WriteTime: 2023/12/01]
+[ImageNames: ]
+
 eks 모듈 말고 리소스로 변경해야함
 
 → eks 모듈에서는 node group의 instance id를 제공하지 않음

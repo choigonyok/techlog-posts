@@ -1,3 +1,8 @@
+[Tags: KUBERNETES DEV PROJECTS]
+[Title: Skaffold로 지속적 개발하기]
+[WriteTime: 2023/09/19]
+[ImageNames: ]
+
 ## 개요
 
 Kind로 로컬 쿠버네티스를 구축했다. 개발 편의성을 높이기위해, 개발자가 코드를 수정하면 자동으로 이미지가 재빌드되고, Kind 클러스터에 Load 되고, 매니페스트로 쿠버네티스에 배포되는 파이프라인을 구축하고 싶었다.

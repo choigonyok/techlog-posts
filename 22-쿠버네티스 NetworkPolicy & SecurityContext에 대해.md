@@ -1,3 +1,8 @@
+[Tags: KUBERNETES]
+[Title: 쿠버네티스 NetworkPolicy & SecurityContext에 대해]
+[WriteTime: 2023/09/22]
+[ImageNames: ]
+
 ## 개요
 
 쿠버네티스는 보안을 위해 NetworkPolicy, SecurityContext를 제공한다. 각 오브젝트에 대해 깊게 알아보려고 한다.

@@ -1,3 +1,8 @@
+[Tags: SEC KUBERNETES]
+[Title: Kubernetes Hardening Guide 번역하기]
+[WriteTime: 2023/10/20]
+[ImageNames: ]
+
 ## Preamble
 
 쿠버네티스 클러스터에 보안에 대해 공부하고 있다. 클러스터 보안의 광범위함, 부족한 정보, Deprecated/Beta 버전의 기능들에 대해 큰 혼란을 겪고있었다. 그러다가 미국의 National Security Agency(NSA)와 Cybersecurity and Infrastructure Security Agency(CISA)에서 쿠버네티스를 사용하는 미국의 국가기관들을 위해 22년도 여름에 작성한 쿠버네티스 보안 강화 가이드라인을 찾게 되었다.

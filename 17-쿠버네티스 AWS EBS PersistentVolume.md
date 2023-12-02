@@ -1,3 +1,8 @@
+[Tags: KUBERNETES CLOUD]
+[Title: 쿠버네티스 AWS EBS PersistentVolume]
+[WriteTime: 2023/08/31]
+[ImageNames: ]
+
 ## 개요
 
 기존에는 hostPath 볼륨을 이용해 블로그의 이미지파일을 저장했다. 백엔드 파드가 종료되고 재생성되더라도 hostPath 볼륨으로 데이터가 사라지지 않을 수 있었지만, 노드 자체가 삭제되거나 백엔드 파드가 다른 노드에서 생성된다면 여전히 데이터 소실 가능성이 있는 상태였다.

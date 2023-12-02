@@ -1,3 +1,8 @@
+[Tags: KUBERNETES INFRA PROJECTS]
+[Title: HA ETCD 외부 클러스터 구축하기]
+[WriteTime: 2023/10/24]
+[ImageNames: ]
+
 ## Contents
 
 1. Preamble
