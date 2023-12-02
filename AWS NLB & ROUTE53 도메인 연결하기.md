@@ -2,7 +2,7 @@
 [Tags: CLOUD PROJECTS]
 [Title: AWS NLB & ROUTE53 도메인 연결하기]
 [WriteTime: 2023/07/20]
-[ImageNames: ]
+[ImageNames: f77cc4cf-91b6-4494-b7d7-e449277763b3.png]
 
 ## 개요
 

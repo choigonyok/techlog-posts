@@ -2,7 +2,7 @@
 [Tags: KUBERNETES]
 [Title: 쿠버네티스 NetworkPolicy & SecurityContext에 대해]
 [WriteTime: 2023/09/22]
-[ImageNames: ]
+[ImageNames: d3ef3b3d-e78b-4e99-a76d-e64a3b3bacc3.png]
 
 ## 개요
 

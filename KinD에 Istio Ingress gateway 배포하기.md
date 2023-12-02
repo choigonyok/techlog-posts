@@ -2,7 +2,7 @@
 [Tags: ISTIO INFRA PROJECTS]
 [Title: KinD에 Istio Ingress gateway 배포하기]
 [WriteTime: 2023/09/14]
-[ImageNames: ]
+[ImageNames: 9d0bc4b4-9e69-4630-98d9-0e00a43cf943.png]
 
 ## 개요
 

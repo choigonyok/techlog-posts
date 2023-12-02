@@ -2,7 +2,7 @@
 [Tags: PROJECTS INFRA DEV KUBERNETES]
 [Title: KinD로 로컬 쿠버네티스 구축하기]
 [WriteTime: 2023/09/09]
-[ImageNames: ]
+[ImageNames: 9d0bc4b4-9e69-4630-98d9-0e00a43cf943.png]
 
 ## 개요
 

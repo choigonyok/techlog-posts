@@ -2,7 +2,7 @@
 [Tags: KUBERNETES]
 [Title: 쿠버네티스 ingress에 대하여]
 [WriteTime: 2023/07/15]
-[ImageNames: ]
+[ImageNames: a100870a-aece-4088-8dc6-325d5a900e1e.png]
 
 ## 개요
 

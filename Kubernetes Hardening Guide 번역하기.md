@@ -2,7 +2,7 @@
 [Tags: SEC KUBERNETES]
 [Title: Kubernetes Hardening Guide 번역하기]
 [WriteTime: 2023/10/20]
-[ImageNames: ]
+[ImageNames: 6be7c6b6-0f80-4ec1-929e-5c3e370a0b5c.png]
 
 ## Preamble
 

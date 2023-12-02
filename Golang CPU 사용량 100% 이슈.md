@@ -2,7 +2,7 @@
 [Tags: GOLANG DEV]
 [Title: Golang CPU 사용량 100% 이슈]
 [WriteTime: 2023/10/15]
-[ImageNames: ]
+[ImageNames: e056ddbd-ff9c-4283-be3b-b8510c9d99ac.png]
 
 ## Contents
 

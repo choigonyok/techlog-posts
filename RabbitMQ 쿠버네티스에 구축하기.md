@@ -1,8 +1,8 @@
 [ID: 24]
 [Tags: PROJECTS KUBERNETES INFRA]
-[Title: RabbitMQ 쿠버네티스에 배포하기]
+[Title: RabbitMQ 쿠버네티스에 구축하기]
 [WriteTime: 2023/10/04]
-[ImageNames: ]
+[ImageNames: 93852362-4229-4f4a-be55-4230bbe1e42e.png]
 
 ## 개요
 

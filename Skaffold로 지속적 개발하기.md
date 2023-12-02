@@ -2,7 +2,7 @@
 [Tags: KUBERNETES DEV PROJECTS]
 [Title: Skaffold로 지속적 개발하기]
 [WriteTime: 2023/09/19]
-[ImageNames: ]
+[ImageNames: 6fd131ca-8a35-4a64-b0ff-f0188c4b1112.png]
 
 ## 개요
 

@@ -2,7 +2,7 @@
 [Tags: OPS]
 [Title: Jaeger 아키텍처 분석]
 [WriteTime: 2023/10/30]
-[ImageNames: ]
+[ImageNames: f5bc8a4d-fba4-4bf1-85dd-a6b16345dfc2.png]
 
 ## Contents
 
