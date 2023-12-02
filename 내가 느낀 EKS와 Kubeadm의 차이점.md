@@ -1,5 +1,5 @@
 [ID: 36]
-[Tags: KUBERNETES, AWS]
+[Tags: KUBERNETES AWS]
 [Title: 내가 느낀 EKS와 Kubeadm의 차이점]
 [WriteTime: 2023/11/20]
 [ImageNames: ]
