@@ -2,7 +2,7 @@
 [Tags: CLOUD KUBERNETES]
 [Title: AWS Multi-AZ 아키텍처와 Service Topology에 대하여]
 [WriteTime: 2023/12/01]
-[ImageNames: ]
+[ImageNames: c96d1f37-e049-4a05-ac19-3ed41234ed17.png]
 
 ## 소제목
 

@@ -2,7 +2,7 @@
 [Tags: INFRA PROJECTS CLOUD]
 [Title: 블로그 서비스 Terraform 고도화하기]
 [WriteTime: 2023/12/01]
-[ImageNames: ]
+[ImageNames: c96d1f37-e049-4a05-ac19-3ed12809ed17.png]
 
 eks 모듈 말고 리소스로 변경해야함
 

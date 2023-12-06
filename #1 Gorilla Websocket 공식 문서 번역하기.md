@@ -221,4 +221,4 @@ conn에 write된 각 메시지의 압축은
 
 ## 참고
 
-[원문](https://pkg.go.dev/github.com/gorilla/websocket#section-readme
+[원문](https://pkg.go.dev/github.com/gorilla/websocket#section-readme)
