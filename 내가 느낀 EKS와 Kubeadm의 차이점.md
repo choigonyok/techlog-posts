@@ -2,7 +2,7 @@
 [Tags: KUBERNETES AWS]
 [Title: 내가 느낀 EKS와 Kubeadm의 차이점]
 [WriteTime: 2023/11/20]
-[ImageNames: ]
+[ImageNames: cffb8a47-f57b-42ac-aaa8-sd8g7sd9bf42.png]
 
 ## Contents
 

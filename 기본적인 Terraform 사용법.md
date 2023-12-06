@@ -2,7 +2,7 @@
 [Tags: INFRA]
 [Title: 기본적인 Terraform 사용법]
 [WriteTime: 2023/11/07]
-[ImageNames: ]
+[ImageNames: ac885373-4402-4710-bc0b-fd8ca41bc17e.png]
 
 ## Tags
 
