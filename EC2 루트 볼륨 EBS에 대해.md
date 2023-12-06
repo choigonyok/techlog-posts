@@ -2,7 +2,7 @@
 [Tags: CLOUD]
 [Title: AWS EC2 루트 볼륨, EBS에 대해]
 [WriteTime: 2023/09/01]
-[ImageNames: ]
+[ImageNames: f78aef98-d123-47df-ad59-28fedb440ef9.png]
 
 ## 개요
 

@@ -2,7 +2,7 @@
 [Tags: DEV GOLANG PROJECTS]
 [Title: Gorilla Websocket으로 실시간 채팅 구현하기]
 [WriteTime: 2023/08/04]
-[ImageNames: ]
+[ImageNames: 0f71ff5c-83bb-4a00-1234-6f4014d2da54.png]
 
 ## 개요
 

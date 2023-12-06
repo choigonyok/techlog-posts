@@ -2,7 +2,7 @@
 [Tags: INFRA]
 [Title: API Gateway VS L7 LoadBalancer]
 [WriteTime: 2023/07/18]
-[ImageNames: ]
+[ImageNames: 1234bff5-a8b2-41b4-940c-687804a1934e.png]
 
 ## 개요
 

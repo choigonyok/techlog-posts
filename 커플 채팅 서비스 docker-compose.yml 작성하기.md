@@ -2,7 +2,7 @@
 [Tags: PROJECTS DOCKER]
 [Title: 커플 채팅 서비스 docker-compose.yml 작성하기]
 [WriteTime: 2023/07/09]
-[ImageNames: ]
+[ImageNames: abfcf55d-a12b-4b34-b63b-a3e8dcbfded3.png]
 
 ## 개요
 

@@ -2,7 +2,7 @@
 [Tags: CI/CD CLOUD INFRA]
 [Title: Jenkins 클라우드 서버 및 파이프라인 구축]
 [WriteTime: 2023/09/27]
-[ImageNames: ]
+[ImageNames: ec886259-8109-1234-b412-b4aa128674b5.png]
 
 ## 개요
 

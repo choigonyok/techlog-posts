@@ -2,7 +2,7 @@
 [Tags: KUBERNETES CLOUD]
 [Title: 쿠버네티스 AWS EBS PersistentVolume]
 [WriteTime: 2023/08/31]
-[ImageNames: ]
+[ImageNames: 077e9ee7-de6c-123d-8c40-9788c22c03a2.png]
 
 ## 개요
 

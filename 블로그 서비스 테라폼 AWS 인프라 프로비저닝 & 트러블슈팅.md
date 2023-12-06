@@ -2,7 +2,7 @@
 [Tags: INFRA PROJECTS CLOUD]
 [Title: 블로그 서비스 테라폼 AWS 인프라 프로비저닝 & 트러블슈팅]
 [WriteTime: 2023/08/23]
-[ImageNames: ]
+[ImageNames: 44505138-17ff-4d41-12b3-e9d66c20ac1e.png]
 
 ## 개요
 

@@ -1,6 +1,6 @@
 [ID: 35]
 [Tags: TERRAFORM, AWS, KUBERNETES]
-[Title: Terraform으로 EKS에 aws-load-balancer-controller 배포하기]
+[Title: Terraform으로 EKS에 AWS Loadbalancer Controller 배포하기]
 [WriteTime: 2023/11/17]
 [ImageNames: ]
 

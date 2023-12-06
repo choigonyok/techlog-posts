@@ -2,7 +2,7 @@
 [Tags: PROJECTS GOLANG DEV]
 [Title: #2 Gorilla Websocket 공식 문서 번역하기]
 [WriteTime: 2023/07/05]
-[ImageNames: 68e4ba88-4352-41dd-852c-69d9b9e8d32d.png]
+[ImageNames: abf4455d-a57b-4b10-b63b-a3e8dcbfded3.png]
 
 ## 개요
 

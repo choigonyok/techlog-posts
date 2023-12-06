@@ -1,6 +1,6 @@
 [ID: 38]
 [Tags: CI/CD SEC KUBERNETES]
-[Title: Jenkins Agent 컨테이너 이미지 빌드 방식 비교 및 구현 (DinD, DOoD, S2I, Kaniko)]
+[Title: DinD, DOoD, S2I, Kaniko 비교 및 Kaniko 구현]
 [WriteTime: 2023/11/28]
 [ImageNames: ]
 

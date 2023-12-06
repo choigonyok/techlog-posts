@@ -2,7 +2,7 @@
 [Tags: KUBERNETES ISTIO]
 [Title: 쿠버네티스 서비스를 외부에 Expose하는 방법]
 [WriteTime: 2023/07/24]
-[ImageNames: ]
+[ImageNames: b515a4d5-f11b-4e4f-acef-54bc7fee031f.png]
 
 ## 개요
 
