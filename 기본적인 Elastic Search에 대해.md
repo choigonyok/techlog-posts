@@ -1,10 +1,10 @@
 [ID: 45]
-[Tags: ops projects]
-[Title: 기본적인 Elastic Search에 대해]
-[WriteTime: 2023-12-27]
-[ImageNames: 66d9b745-1569-48c5-9bc0-b6449089889f.png aa77d9e6-b794-4910-927d-d407fc6e7dec.png 74081659-ff4f-4492-b529-5f9d20767a04.png]
-
-엘라스틱서치에서 다루는 데이터를 도큐먼트라고 한다.
+		[Tags: OPS PROJECTS]
+		[Title: 기본적인 Elastic Search에 대해]
+		[WriteTime: ]
+		[ImageNames: ]
+		
+		엘라스틱서치에서 다루는 데이터를 도큐먼트라고 한다.
 
 도큐먼트는 RDBME의 레코드와 대응되는 개념이다.
 
@@ -133,7 +133,7 @@ default 인덱스의 샤드들은 rep이 0으로 표시되어있지만, 이건 �
 
 따라서 환경변수로 컨테이너를 실행할 때 토큰을 등록해주어야한다.
 
-docker run --name es02 --net elastic -p 9201:9200 -it -m 3GB -e "ENROLLMENT_TOKEN={TOKEN}" [docker.elastic.co/elasticsearch/elasticsearch:8.11.3](https://docker.elastic.co/elasticsearch/elasticsearch:8.11.3)
+docker run --name es02 --net elastic -p 9201:9200 -it -m 3GB -e "ENROLLMENT_TOKEN={TOKEN}" docker.elastic.co/elasticsearch/elasticsearch:8.11.3
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/0EFB76FE-D3CD-41EB-8A53-019854C704EE/85C4A8F6-595F-4A58-A539-FCD957FCC641_2/LIpiBdvzcakp3JhJvNZ3wVDxSoZflgUTgLeGfF7Dlkoz/Image.png)
 
@@ -230,7 +230,7 @@ POST /products/_update/100
   "script": {  
     "source": """  
     if (ctx._source.stock <= 0) {  
-      ctx.op = 'noop';  
+      ctx.op = \'noop\';  
     }  
     ctx._source.stock -= params.quantity;  
     """,  
@@ -250,4 +250,4 @@ ES에서 여러 요청을 동시에 수행할 때, 데이터베이스의 트랜�
 
 그래서 요청이 실패할 경우 어떤 쿼리에서 실패한 것인지를 확인해야한다.
 
-라우팅 / seq_num 과 primary_term, version을 활용한 동시성 제어 / bulk api
+### 라우팅 / seq_num 과 primary_term, version을 활용한 동시성 제어 / bulk api
