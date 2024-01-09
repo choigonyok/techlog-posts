@@ -1,40 +1,30 @@
 [ID: 32]
-[Tags: CLOUD KUBERNETES]
-[Title: AWS Multi-AZ 아키텍처와 Service Topology에 대하여]
-[WriteTime: 2023/12/01]
-[ImageNames: c96d1f37-e049-4a05-ac19-3ed41234ed17.png]
-
-## 소제목
-
-
-[Jenkins Pipeline #2] CSI로 AWS EBS PersistenceVolume 사용하기
-
-## Tags
-
-
-**CLOUD INFRA KUBERNETES OPS**
-
-## Contents
+		[Tags: CLOUD KUBERNETES PROJECTS]
+		[Title: AWS Multi-AZ 아키텍처와 Service Topology에 대하여]
+		[WriteTime: ]
+		[ImageNames: ]
+		
+		## Contents
 
 1. Preamble
-2. [TroubleShooting] Pending state
+2. ISSUE - Pending state
 3. High Availability를 보장할 순 없을까?
 4. Multi-AZ 아키텍처에 대해
 5. ELB에서 Service로의 트래픽 전달 과정
 6. Imbalanced Loadbalancing을 해결하려면
 7. Service Topology
 8. 레딧 쿠버네티스 커뮤니티에 질문
-9. [TroubleShooting] EBS Volume Permission Denied
+9. ISSUE - EBS Volume Permission Denied
 10. Summary
 
 ## 1. Preamble
 
 
 Jenkins에서 AWS EBS를 볼륨으로 사용하고 싶었다. 호스트의 루트 볼륨을 그냥 사용하다보니 초기 EKS 설정을 하며 클러스터를 삭제 후 재생성할 때마다 설정해둔 Jenkins 플러그인이나 크리덴셜 설정들도 초기화되어서, 별도의 볼륨으로 관리하여 생산성을 높이고자 했다.
+>  이 글은 테크블로그 어플리케이션 리팩토링 과정에서 CSI Driver와 IAM Role의 연결이 완료된 이후 EBS를 PV로 사용하면서 고가용성을 보장할 수 있는 방법에 대해 고민한 과정을 담았다.
 
-이 글은 CSI Driver와 IAM Role의 연결이 완료된 이후 EBS를 PV로 사용하면서 고가용성을 보장할 수 있는 방법에 대해 고찰한 과정을 담았다.
 
-2. ## [TroubleShooting] Pending state
+2. ## ISSUE - Pending state
 
 
 CSI Driver를 정상적으로 클러스터에 배포한 이후, Driver가 Pod로 실행되고있으니 이제 설정이 다 끝났다고 생각했다. StorageClass를 통해 볼륨을 프로비저닝하고 PVC를 통해 볼륨을 Claim 하도록 Jenkins Pod의 manifest를 설정한 후, Pod를 배포했다.
@@ -181,7 +171,7 @@ spec:
 Cluster 방식은 추가적인 Hop이 생기긴 하지만, 차라리 Hop이 생기는 게 imbalance한 로드밸런싱이 되는 것보다 더 낫다.
 
 
-2.  Imbalance를 해결하기
+2.  Imbalance를 해결하기
 
 Pod를 전체 노드에 걸쳐 고르게 배포할 수 있다면 추가적인 Hop도 안생기고 각 노드도 고르게 트래픽을 받을 수 있게 된다.
 
@@ -234,11 +224,11 @@ affinity:
              operator: In
              values:
              - my-app
-        topologyKey: kubernetes.io/hostname # HEAR
+        topologyKey: kubernetes.io/hostname
 ```
 
 
-## 8. 레딧 쿠버네티스 커뮤니티에 질문
+## 8. Reddit K8s community에 질문
 
 
 초반에 ASG와 Topology key에 대한 개념이 잘 이해되지 않았는데, 정보의 바다라는 구글 안에서도 답을 찾기가 힘들었다. 결국 쿠버네티스 레딧에 처음 글을 써보게 되었다.
@@ -253,11 +243,11 @@ affinity:
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/BA754B6E-308D-4B37-AFFE-8D59D8F3F9D6/53B3EC90-DC6E-48DB-917A-5CA37118404D_2/JydsIZuvTSq6YTOedE6ydykiA7OGyUhaOQc56BTkuVYz/Image.png)
 
-아래처럼 너무 친절하게 답해줘서 감동 배부르게 먹었다.
+아래와 같은 답을 받았다.
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/BA754B6E-308D-4B37-AFFE-8D59D8F3F9D6/41653034-5790-4966-BC7C-E77B18FC6C56_2/xKuVFzXTdryYlzZRalrsTsxDnA7etfhEelmYidxvuwsz/Image.png)
 
-## 9. [TroubleShooting] EBS Volume Permission Denied
+## 9. ISSUE - EBS Volume Permission Denied
 
 
 다시 쿠버네티스 클러스터로 돌아와보니 잘만 running하고있는 줄 알았던 Jenkins Pod가 15번째 restart를 막 다시 시작하려고 하고있는 것을 발견했다. 로그를 확인해보니,
@@ -396,13 +386,9 @@ spec:
 ## 10. Summary
 
 
-"Pod 하나 배포하는데 이렇게까지해?" 라는 생각이 들었고 말이 좀 이상하게 들린 순 있지만 오히려 그래서 재밌었다. 잡담 하나 얹자면, 가수 이효리 이상순 부부의 일화가 떠올랐다. 이상순씨가 의자의 밑 바닥 사포질을 열심히하는 걸 보고 이효리씨가 여긴 어차피 안보이지 않느냐고 대충해도 누가 아냐고 질문을 툭 던졌다고 한다. 이상순씨는 그 질문에 "내가 알잖아"라고 답했다고 한다.
-
 블루 그린 배포전략, 멀티 클러스터, 멀티 AZs, 오토스케일링 등 사실 고가용성을 보장한다는 것은 사용자 경험을 좋게해주고, 서비스의 reliability를 높인다. 그만큼 더 많은 비용이 들어가기도 한다. 서비스에 있어 신뢰성, 안정성은 정말 중요하다.
 
 신뢰성은 실제로 깨지기 전까지는 얼마나 문제가 있는지 파악하기 어렵다는 특성을 가진다. (개인적인 생각이다) 그래서 언제 깨져버릴 지 모르는 서비스의 신뢰성을, 깨지지 않도록 더 성장시키고 발전시키기 위해 끊임없이 새 기술을 적용시키고 더 좋은 발전방향을 찾아나가려는 엔지니어의 열정이 필요한 것 같다.
-
-지금도 충분히 잘 돌아가는데 굳이 Multi-AZ 설정을, 멀티 클러스터 구축을, 고가용성 보장을, 여러 배포 전략들을 해야하나? 생각할 수 있지만 의자 밑바닥 사포질 같은 데브옵스 엔지니어의 이런 세밀한 설계들이 더 완성도 높고 훌륭한 서비스를 만들어내는 거라고 생각한다. 나도 그 길을 걸어야겠다. 비록 아무도 알아주지 않더라도 내가 아니까!
 
 ## References
 
@@ -419,14 +405,14 @@ spec:
 
 Local 설정의 장점은 요청을 보낸 사용자의 실제 IP주소를 확인할 수 있다는 것이다. 이와 관련한 공식문서 내용을 찾을 수 있었다. [Kubernetes Official Docs](https://kubernetes.io/ko/docs/tutorials/services/source-ip/#type-nodeport-%EC%9D%B8-%EC%84%9C%EB%B9%84%EC%8A%A4%EC%97%90%EC%84%9C-%EC%86%8C%EC%8A%A4-ip)
 
-### NodePort 타입 서비스로 패킷이 전달될 떄
+### NodePort 타입 서비스로 패킷이 전달될 떄
 
 
 외부에서 서비스 오브젝트로 보내진 트래픽은 NAT가 적용된다. NAT는 Network Address Tranlation의 준말로, IP를 변환시켜준다. 내부에서 외부로 트래픽이 나갈 때 내부의 Private IP를 NAT를 통해 Public IP로 변환시켜준다. 이 방향을 SNAT(Source Network Address Translation)이라고 하고, 반대로 외부에서 접속을 내부에 전달할 때 외부의 Public IP를 내부의 Private IP로 변환시키는 것을 DNAT(Destination Network Address Translation)이라고 한다.
 
 마치 외부 입장에서는 받는 응답이 어디서 온 줄을 모르니까 NAT가 리버스 프록시의 역할을 하고, 내부 입장에서는 받는 요청이 어디서 온 줄을 모르니까 NAT가 포워드 프록시 역할을 하게 된다.
 
-### SNAT
+###  SNAT
 
 
 SNAT에 대해 좀 더 자세히 살펴보자. 
@@ -436,7 +422,7 @@ SNAT에 대해 좀 더 자세히 살펴보자.
 
 만약 사설 IP로 되어있으면 응답을 받은 A측에서 같은 엔드포인트에 또 요청을 보내야할 때, IP가 사설로 되어있어서 올바른 요청을 보낼 수가 없다.
 
-둘 다 사설로 되어있을 때에도, 사설 IP로 보내면
+둘 다 사설로 되어있을 때에도, 사설 IP로 보내면 
 
 
 - 클라이언트는 `node2:nodePort`로 패킷을 보낸다.
