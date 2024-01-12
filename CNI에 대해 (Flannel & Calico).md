@@ -1,10 +1,10 @@
 [ID: 55]
-[Tags: kubernetes istio]
-[Title: CNI에 대해 (Flannel & Calico)]
-[WriteTime: 2024-01-12]
-[ImageNames: 81326447-f95d-45be-bd98-5e6bf3707d15.png]
-
-## Content 
+		[Tags: KUBERNETES ISTIO NETWORK]
+		[Title: CNI에 대해 (Flannel & Calico)]
+		[WriteTime: ]
+		[ImageNames: ]
+		
+		## Content 
 
 1. Preamble
 2. CNI란
