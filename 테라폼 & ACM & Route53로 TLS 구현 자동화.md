@@ -2,8 +2,7 @@
 [Tags: PROJECTS CLOUD INFRA SEC]
 [Title: 테라폼 & ACM & Route53로 TLS 구현 자동화]
 [WriteTime: 2024-01-09]
-[ImageNames: ]
-
+[ImageNames: 1d9dff4c-c52d-4305-9558-7a8b753f54dd.png]
 
 ## Content
 
