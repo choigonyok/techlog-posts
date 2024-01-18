@@ -2,7 +2,7 @@
 		[Tags: ISTIO]
 		[Title: Envoy 아키텍처 & Request-Response Flow]
 		[WriteTime: 2024-01-08]
-		[ImageNames: fbf78fc3-5453-4a26-aadd-3b575e2a0c4b.png 3fe1e2f8-585c-4c22-ab48-703e8d1cf5f1.png]
+		[ImageNames: 3fe1e2f8-585c-4c22-ab48-703e8d1cf5f1.png]
 		
 		
 ## Content
