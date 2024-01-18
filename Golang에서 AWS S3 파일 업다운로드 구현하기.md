@@ -1,12 +1,10 @@
 [ID: 57]
-[Tags: projects golang dev cloud]
-[Title: Golang에서 AWS S3 파일 업다운로드 구현하기]
-[WriteTime: 2024-01-18]
-[ImageNames: 203997b0-cd2c-421f-aee8-e3360fa8b187.png]
-
-![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/2EDC1D2C-F11B-43C0-99C2-B41F7A8A7683/097FF384-44B3-4EF5-A051-3939F185BC1D_2/WNEaOxjjKdqXYLkmtvT7W6DHii3QDIGWOMZFtJpgoIgz/.001.png)
-
-## Content
+		[Tags: PROJECTS GOLANG DEV CLOUD]
+		[Title: Golang에서 AWS S3 파일 업다운로드 구현하기]
+		[WriteTime: 2024-01-18]
+		[ImageNames: ]
+		
+		## Content
 
 1. Preamble
 2. Golang 구현
@@ -89,7 +87,7 @@ func Upload(f *multipart.FileHeader, imageName string) error {
 	if err != nil {
 		return fmt.Errorf("failed to upload file, %v", err)
 	}
-	fmt.Printf("file uploaded to, %s\n", aws.StringValue(&result.Location))
+	fmt.Printf("file uploaded to, %s\\\\n", aws.StringValue(&result.Location))
 	return nil
 }
 ```
