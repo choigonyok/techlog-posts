@@ -1,9 +1,10 @@
-[ID: 53]
-[Tags: istio]
-[Title: Envoy 아키텍처 & Request-Response Flow]
-[WriteTime: 2024-01-08]
-[ImageNames: 35d0b88d-37da-44bc-89e5-9914915bdeea.png]
-
+[ID: 0]
+		[Tags: ISTIO]
+		[Title: Envoy 아키텍처 & Request-Response Flow]
+		[WriteTime: 2024-01-08]
+		[ImageNames: 35d0b88d-37da-44bc-89e5-9914915bdeea.png fbf78fc3-5453-4a26-aadd-3b575e2a0c4b.png]
+		
+		
 ## Content
 
 1.  Preamble
