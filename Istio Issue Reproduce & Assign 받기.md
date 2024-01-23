@@ -3,8 +3,8 @@
 		[Title: Istio Issue Reproduce & Assign 받기]
 		[WriteTime: 2024-01-21]
 		[ImageNames: 8d61ff28-532e-4853-b944-1fe543080c05.png 283c517c-fa11-4296-87cb-3c5a99c7b604762843-28a7-4750-b17b-dba4e05cd68e.png d9ad7189-725c-46a9-ae4a-79e4354abe5c.png 31ce9d08-900f-4521-9163-f24af55d0f20.png b0565ecd-d1e5-41af-81a6-42d2204232a7.png 1d9d33c0-1541-4e11-9c5d-ff7f55285802.png 4f3c41f0-82d7-40aa-91bf-8ed13fc1800a.png 0efc0ea7-d5b5-4ef1-b09c-2da0002075a2.png 04762843-28a7-4750-b17b-dba4e05cd68e.png eaac0525-8c8f-46e6-aefb-c8a40c765bc2.png 369da3bf-6258-40d8-aaaf-595282222084.png 1d9ad7189-725c-46a9-ae4a-79e4354abe5c.png 231ce9d08-900f-4521-9163-f24af55d0f20.png 3b0565ecd-d1e5-41af-81a6-42d2204232a7.png 41d9d33c0-1541-4e11-9c5d-ff7f55285802.png]
-		
-		## Content
+
+## Content
 
 1. Preamble
 2. Issue Reproduce용 KinD 클러스터 구성
@@ -17,7 +17,6 @@
 9. References
 
 ## 1. Preamble
-
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/D918083C-9D83-4FF0-B11F-9ECC4DD9064D/A4B23C6B-2085-40C5-A1B7-F44E17A54ECC_2/zl6MEF146fH616SfI2TNxZGSLPjwOf9Dm6h1wbvNcGIz/Image.png)
 
@@ -404,11 +403,15 @@ spec:
 ## 8. 코드베이스 수정을 위한 Issue Assign 요청
 
 
-위의 과정들을 통해 이 이슈가 그저 Istio를 미숙하게 다루는데에서 생기는 실수가 아니라 소프트웨어적 버그인 것으로 판단하게 되었고, 평소 Isito 레포에서 가장 활발히 활동하던 Istio 메인테이너를 호출해서 이 이슈를 할당해달라고 요청했다.
+위의 과정들을 통해 이 이슈가 그저 Istio를 미숙하게 다루는데에서 생기는 실수가 아니라 소프트웨어적 버그 혹은 아직 구현되지 않은 것으로 판단하게 되었고, 평소 Isito 레포에서 가장 활발히 활동하던 Istio 메인테이너를 호출해서 이 이슈를 할당해달라고 요청했다.
 
-![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/D918083C-9D83-4FF0-B11F-9ECC4DD9064D/415148FA-8A73-4D80-B037-E7F023E4B2C6_2/fuBxBuOCsMJSwnt38yiCb6u1cTkoyVMtEpfjUiZX2NQz/Image.png)
+![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/D918083C-9D83-4FF0-B11F-9ECC4DD9064D/C7D1B486-D7E1-4B00-8A6B-20E1BA369168_2/8x0C65teE5IF9wulVniblinfnCaGtBYn06FEe8Z3xHMz/Image.png)
 
-이슈가 나에게 할당되었고, 이 이슈를 해결해나가는 과정을 앞으로 글로 쭉 써볼 예정이다.
+![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/D918083C-9D83-4FF0-B11F-9ECC4DD9064D/E5DE0CAA-6F29-4AEA-A95D-55A5EE933C6D_2/3PLKoZe522Z0LNRghLrm8ryv4uLcJrDy6gkMYnYcqn8z/Image.png)
+
+메인테이너가 아직 구현되지 않은 것이 아니라 버그인 것 같다는 답변을 달아주었고, 관련해서 버그를 찾아서 직접 고쳐보기로 했다.
+
+이 이슈를 해결해나가는 과정을 앞으로 글로 쭉 써볼 예정이다.
 
 ## 9. References
 
