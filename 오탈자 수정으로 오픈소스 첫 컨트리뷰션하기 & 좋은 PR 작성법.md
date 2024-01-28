@@ -1,11 +1,17 @@
 [ID: 50]
-[Tags: ISTIO dev]
-[Title: 오탈자 수정으로 오픈소스 첫 컨트리뷰션하기 & 좋은 PR 작성법]
-[WriteTime: 2024-01-04]
-[ImageNames: dda4221e-4f62-4dda-a3ec-1077553530d8.png]
+		[Tags: ISTIO DEV]
+		[Title: 오탈자 수정으로 오픈소스 첫 컨트리뷰션하기 & 좋은 PR 작성법]
+		[WriteTime: 2024-01-04]
+		[ImageNames: ]
+		
+		## Content
 
-## Content
-
+1. Preamble
+2. Typo 발견
+3. 레포지토리 fork & branch 생성
+4. 좋은 PR을 작성하는 법
+5. Typo PR 생성
+6. References
 
 ## 1. Preamble
 
@@ -29,7 +35,7 @@ Istiod의 아키텍처에 대해 작성된 리드미에서 게이트웨이 리�
 
 흐름상 converts의 typo인 것 같아 수정을 해보기로 했다.
 
-## 3. 레포 fork & branch 생성
+## 3. 레포지토리 fork & branch 생성
 
 
 해당 리드미가 위치한 레포지토리의 마스터 브랜치를 포크했다. 그리고 수정을 위한 브랜치를 생성했다. 
@@ -65,7 +71,7 @@ PR을 생성한 커밋들이 뭘 하고있는 건지를 짧게, 핵심적으로 
 하나의 PR에서 버그도 고치고, 리팩토링도 하고, 기능도 추가하고, 오탈자도 수정하는 등 작업이 많으면 PR description에 bullet-point 마크를 사용해서 작업 내용을 설명해주는 것이 좋다.
 
 ```yaml
-Subject: Fix bug(#449) that causes Foo component to crash when flag is not set.
+Subject: Fix bug that causes Foo component to crash when flag is not set.
 Description:
 + This is caused by an off-by-one failure during iteration of nukes to launch.
 + Also fixed a race condition by adding a lock on the trigger mechanism that caused concurrent launches that caused a crash in the silo.
@@ -84,7 +90,7 @@ Description:
 ```
 
 
-###  짧게
+### 짧게
 
 
 PR이 500줄 이상 넘어갈 정도라면 여러개의 PR로 나누는 것이 좋다. PR이 길수록 리뷰어가 개발자의 의도를 이해하는데 어려움을 겪을 수 있다.
@@ -108,22 +114,38 @@ PR과 관련해서 추가적인 작업을 리뷰어가 요청하면, PR 작성�
 
 새로운 작업에서 작성되는 이슈 넘버(#로 표현되는 번호)도 루트 PR로 설정해서 해당 작업이 어영부영 넘어가지 않을 것이라는 걸 리뷰어가 확인할 수 있도록 하는 것이 좋다.
 
-## 5. PR 생
+## 5. Typo PR 생성
 
+
+이슈를 수정한 후에 fork한 로컬 마스터 브랜치에 푸시를 하고, istio 레포지토리에 fork 레포지토리의 merge를 요청하는 PR을 작성했다.
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/B830C062-AD20-4D51-AE9D-F6367DD08CC3/47DEC89B-2CFE-4162-80D6-A5A40A9C392B_2/V70tBMg4WUsT2A1v8IMDBuyVDnV9c5LEdcVxRJkUMd8z/Image.png)
+
+Istio 레포지토리에서의 첫 PR이다보니 인가/인증 작업이 필요했다. `CONTRIBUTING.md`에 설명되어있는대로 진행했다.
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/B830C062-AD20-4D51-AE9D-F6367DD08CC3/8B4200E9-05E6-4D67-888F-EBD7C873951F_2/BbM9VhvwN12sxuyIjmDwxZzKZhuIE3WxlnAtZEjIxgIz/Image.png)
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/B830C062-AD20-4D51-AE9D-F6367DD08CC3/DBD4EC91-B91C-42CC-9B49-1D62DBFD8A9C_2/XCy7NAVT2rRZFDglFxJJtmyhZjek86j0cRTPuViKRPAz/Image.png)
 
+PR이 성공적으로 등록된 것을 확인했다.
+
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/B830C062-AD20-4D51-AE9D-F6367DD08CC3/183F1568-CD94-4E06-A165-B16EF467BDEE_2/79MIE2tmcnJX24BxvAJ9svferRVimK62a2XdBif4HiUz/Image.png)
+
+며칠 후에 Istio에서 메일이 왔다. 성공적으로 수정한 내용이 마스터 브랜치에 병합되었다는 내용이었다.
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/57422FB1-01A4-4806-9CDE-3228EA52D017/974F97A7-21BA-47E7-952E-7723A8BD0F41_2/Nr24dZfEPPbbYyLExEn4UbcQ9YizObElATn6SYxnmzYz/Image.png)
 
+직접 레포지토리에 들어가 확인해보니 성공적으로 병합된 것을 확인할 수 있었다.
+
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/B830C062-AD20-4D51-AE9D-F6367DD08CC3/8FEB4AD9-C95A-4286-A0E7-495530D236B6_2/BKFwL6U9p0Rt638NOUbM5qdKlAfXyTHa4TPYYcz96W0z/Image.png)
 
-## Reference
+이제 Istio 이슈나 디스커션, PR에서 당당하게 컨트리뷰터로써 내 의견을 피력할 수 있게되었다. 첫 PR은 가벼운 Typo 수정이었지만, Istio 아키텍처와 코드베이스에 대해 더 깊은 이해를 가지고 직접 기능 제안과 구현, 버그 픽싱등을 해낼 줄 아는 컨트리뷰터가 되고싶다는 생각을 하게 되었다.
+
+![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/B830C062-AD20-4D51-AE9D-F6367DD08CC3/60FB2FA1-7E90-45CC-A991-80E5FC6A6843_2/T5xo0OoHgjQxaXdg1vLtAyaWJRzclsMEyFW090H10q0z/Image.png)
+
+![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/B830C062-AD20-4D51-AE9D-F6367DD08CC3/C55E1350-DFAE-4864-A9F6-5AA499DFDE5F_2/Mb3C2Ea8ktr78rM1oy2ucVDJ4P7P3Rc5IxO1HlPz760z/Image.png)
+
+## 6. References
 
 
 [Writing Good Pull Request](https://github.com/istio/istio/wiki/Writing-Good-Pull-Requests)
