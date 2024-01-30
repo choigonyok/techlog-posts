@@ -1,10 +1,10 @@
 [ID: 50]
-		[Tags: ISTIO DEV]
-		[Title: 오탈자 수정으로 오픈소스 첫 컨트리뷰션하기 & 좋은 PR 작성법]
-		[WriteTime: 2024-01-04]
-		[ImageNames: dda4221e-4f62-4dda-a3ec-1077553530d8.png]
-		
-		## Content
+[Tags: ISTIO DEV]
+[Title: 오탈자 수정으로 오픈소스 첫 컨트리뷰션하기 & 좋은 PR 작성법]
+[WriteTime: 2024-01-04]
+[ImageNames: dda4221e-4f62-4dda-a3ec-1077553530d8.png]
+
+## Content
 
 1. Preamble
 2. Typo 발견
