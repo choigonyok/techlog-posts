@@ -4,7 +4,7 @@
 [WriteTime: 2024-01-28]
 [ImageNames: 5cff130e-a27f-4081-b0fc-1156fbff73d6.png]
 
-##  Content
+## Content
 
 1. Preamble
 2. iptables란

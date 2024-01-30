@@ -1,10 +1,10 @@
 [ID: 47]
-		[Tags: INFRA GOLANG KUBERNETES DOCKER]
-		[Title: MySQL 마스터-슬레이브 Replication 구성 및 자동화하기]
-		[WriteTime: 2023-12-27]
-		[ImageNames: [object Object] [object Object] [object Object] [object Object] [object Object]]
+[Tags: INFRA GOLANG KUBERNETES DOCKER]
+[Title: MySQL 마스터-슬레이브 Replication 구성 및 자동화하기]
+[WriteTime: 2023-12-27]
+[ImageNames: d4ae59bf-ff56-4400-add1-7b56071e8f7f.png 044c3458-5add-4351-ba6d-6919927bb27f.png f8e8c9fa-3991-418e-9648-8dc1573205b2.png e5f4c42e-35f6-4f1e-972f-9c3c486c3893.png e4c5ba93-0c2d-49a4-a863-cd0d63b2134d.png]
 		
-		## Content
+## Content
 
 1. Preamble 
 2. Replication

@@ -1,8 +1,8 @@
 [ID: 25]
 [Tags: DOCKER]
-[Title: 도커 컴포즈 서비스 디스커버리 오류 : ERR_NAME_NOT_RESOLVED]
+[Title: Docker-compose 서비스 디스커버리 에러 트러블슈팅]
 [WriteTime: 2023/10/10]
-[ImageNames: ]
+[ImageNames: 3fe11234-585c-4c22-ab48-12348d1cf5f1.png]
 
 ## 개요
 
