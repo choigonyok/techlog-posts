@@ -260,15 +260,15 @@ sudo apt-mark hold kubelet kubeadm kubectl containerd
 
 apt 패키지 매니저는 패키지의 새로운 버전이 나올 때마다 알아서 업데이트를 하는데, 이러다보면 업데이트된 버전과 버전 충돌이 생길 수 있기 때문에 다운로드한 패키지들이 자동으로 업데이트되지 않도록 `hold`를 마킹해준다.
 
-## 5. 마스터노드 추가 구성
+## 5. 마스터노드 추가 구성
 
 
 마스터노드는 kubeadm을 통해 쿠버네티스 마스터노드를 구성하기 위한 스크립트가 추가적으로 필요하다.
 
 ```bash
-IPADDR=$(curl ifconfig.me && echo \"\")
+IPADDR=$(curl ifconfig.me && echo "")
 NODENAME=$(hostname -s)
-POD_CIDR=\"192.168.0.0/16\"
+POD_CIDR="192.168.0.0/16"
 ```
 
 
@@ -376,9 +376,9 @@ sudo apt-mark hold kubelet kubeadm kubectl containerd
 
 
 ```bash
-IPADDR=$(curl ifconfig.me && echo \"\")
+IPADDR=$(curl ifconfig.me && echo "")
 NODENAME=$(hostname -s)
-POD_CIDR=\"192.168.0.0/16\"
+POD_CIDR="192.168.0.0/16"
 touch text.txt
 sudo kubeadm init --control-plane-endpoint=$IPADDR  --apiserver-cert-extra-sans=$IPADDR  -pod-network-cidr=$POD_CIDR --node-name $NODENAME --ignore-preflight-errors Swap > text.txt
 sudo mkdir -p $HOME/.kube

@@ -4,7 +4,7 @@
 [WriteTime: 2023/11/04]
 [ImageNames: 077e9ab1-de6c-123d-8c40-1234c22c03a2.png]
 		
-		## Contents
+## Contents
 
 1. Preamble
 2. ISSUE - Pending state

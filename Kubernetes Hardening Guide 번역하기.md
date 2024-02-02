@@ -4,13 +4,31 @@
 [WriteTime: 2023/10/20]
 [ImageNames: 6be7c6b6-0f80-4ec1-929e-5c3e370a0b5c.png]
 
-## Preamble
+## Contents
+
+1. Preamble
+2. 보안 위협의 종류
+3. 보안 위협이 생길 수 있는 곳
+4. Pod 보안
+5. ServiceAccount & Token
+6. Namespace 분리
+7. NetworkPolicy
+8. Control Plane
+9. ETCD
+10. Kubectl
+11. Secret
+12. Cloud Infrastructure
+13. 인가 / 인증
+14. Audit log
+15. References
+
+## 1. Preamble
 
 쿠버네티스 클러스터에 보안에 대해 공부하고 있다. 클러스터 보안의 광범위함, 부족한 정보, Deprecated/Beta 버전의 기능들에 대해 큰 혼란을 겪고있었다. 그러다가 미국의 National Security Agency(NSA)와 Cybersecurity and Infrastructure Security Agency(CISA)에서 쿠버네티스를 사용하는 미국의 국가기관들을 위해 22년도 여름에 작성한 쿠버네티스 보안 강화 가이드라인을 찾게 되었다.
 
-이 가이드라인대로 따라간다고 100% 완벽하게 쿠버네티스 보안을 지킬 수 있는 것은 아니겠지만, 가이드라인을 읽으면서 **\"실제 개발될 서비스에서 적어도 이 정도의 보안 수준은 필요하겠다\"** 라는 Insparation은 얻을 수 있었다.
+이 가이드라인대로 따라간다고 100% 완벽하게 쿠버네티스 보안을 지킬 수 있는 것은 아니겠지만, 가이드라인을 읽으면서 `실제 개발될 서비스에서 적어도 이 정도의 보안 수준은 필요하겠다` 라는 Insparation은 얻을 수 있었다.
 
-## Kind of Security Threat
+## 2. 보안 위협의 종류
 
 1. 컨테이너 레벨
 
@@ -28,7 +46,7 @@
 
 쿠버네티스는 온프레미스 또는 클라우드 환경에 설치된다. 쿠버네티스의 기반이 되는 인프라에 문제가 있다면 보안적인 위협이 될 수 있다.
 
-## Security Threat in WHERE
+## 3. 보안 위협이 생길 수 있는 곳
 
 1. 컨트롤플레인
 
@@ -60,11 +78,9 @@ RBAC(역할 기반 접근 제어)를 잘 설정해두어서 접근제어를 어�
 
 많은 쿠버네티스 클러스터가 클라우드 서비스 위에 설치되어있고, 이 클라우드 공급자(provider)가 보안적 문제가 있다면, 각 노드를 통해 공격당할 수 있다.
 
-## Pod Security
-
+## 4. Pod 보안
 
 1. ### 컨테이너 실행 권한
-
 
 쿠버네티스에서 파드는 가장 작은 배포 단위이다. 때문에 보안이 중요한데, 많은 컨테이너가 루트 권한이 필요하지도 않은데 SuperUser 권한으로 실행되는 경우가 꽤 많다.
 
@@ -73,7 +89,6 @@ RBAC(역할 기반 접근 제어)를 잘 설정해두어서 접근제어를 어�
 이미지가 Root로 빌드됐어도 강제로 NonRoot로 보안 레이어를 한 겹 덮어씌워주는 기능을 가진 컨테이너 런타임도 있는데, 한 겹 덮어씌우는만큼 관리와 운영이 복잡해지고, 기능이 안정적이지 않은 경우가 많아서 운영환경에서 해당 컨테이너 런타임만으로 보안을 커버하기엔 적합하지 않다.
 
 2. ### 컨테이너 내부 권한
-
 
 이렇게 컨테이너가 실행될 때의 권한을 제어하더라도, 컨테이너 내부에서 실행되는 프로세스에 대해서는 권한 제어를 안하는 경우 역시 많다. 컨테이너가 공격당할 때, 외부 다른 Pod로는 escalation이 일어나지 않더라도 공격자가 해당 컨테이너 내부에서는 파일시스템을 충분히 조작할 수 있게 된다.
 
@@ -94,7 +109,7 @@ RBAC(역할 기반 접근 제어)를 잘 설정해두어서 접근제어를 어�
 
 어드미션 컨트롤러는 API서버로 오는 모든 요청들을 인터셉트해서 인증/인가 과정을 거치게 강제한다. 인증/인가가 나지 않은 이미지는 배포를 할 수 없게 된다.
 
-## ServiceAccount & Token
+## 5. ServiceAccount & Token
 
 
 쿠버네티스는 기본적으로 Pod가 생성될 때 default **ServiceAccount**(이하 서비스 어카운트)와 **Token**을 생성한다.
@@ -109,7 +124,7 @@ RBAC(역할 기반 접근 제어)를 잘 설정해두어서 접근제어를 어�
 
 리소스 분리를 위해서는 네이티브 리소스인 NetworkPolicy, 추가적으로 방화벽 사용할 수 있고, REST 요청시 시크릿과 내용을 암호화할 수 있도록 내부적으로도 TLS 암호화를 사용하는 것이 좋다.
 
-## Namespace 분리
+## 6. Namespace 분리
 
 
 네임스페이스를 분리한다고 리소스들이 격리되는 건 아니다. 서로 다른 네임스페이스끼리도 같은 네트워크에 속해있기 때문에, ClusterIP나 서비스 디스커버리를 활용해 내부 컴포넌트들끼리 서로 접근할 수 있다. 다만 네임스페이스를 분리하면 분리된 네임스페이스들을 통해 RBAC이나 NetworkPolicy로 격리를 쉽게 구현할 수 있다.
@@ -120,7 +135,7 @@ ClusterIP는 Pod가 죽은 후 재생성되면 새롭게 할당되기 때문에,
 
 보안을 위해 외부로 서비스를 노출할 때는 TLS 인증을 꼭 받아야한다.
 
-## NetworkPolicy
+## 7. NetworkPolicy
 
 
 NetworkPolicy(이하 네트워크 정책)는 네임스페이스, Pod, External-IP 사이의 트래픽을 제어한다. 이 네트워크 정책은 네트워크 플러그인(CNI)이 지원을 해야한다. 
@@ -135,7 +150,7 @@ LimitRange(이하 리미트 레인지)로 특정 네임스페이스에 대해 �
 
 ProcessID는 노드에 설정하는 것이고, 노드에서 쿠버네티스 시스템 데몬을 사용하는 pid의 수를 제한하는 것이다.
 
-## Control Plane
+## 8. Control Plane
 
 
 컨트롤 플레인은 앞서 말했듯이 쿠버네티스의 코어이다. 컨트롤 플레인은 파드를 생성히고, 시크릿을 읽고, 컨테이너 상태를 확인하고, 클러스터 커맨드를 실행하는 많은 중요한 역할을 맡고있다. 그래서 아주 완벽히 보호되어야하고, RBAC, TLS 암호화, 인증/인가, 다른 Pod들과의 네트워크 분리 등을 통해 인가되지 않은 사용자가 컨트롤플레인에 접근하는 것을 제어해야한다.
@@ -144,7 +159,7 @@ ProcessID는 노드에 설정하는 것이고, 노드에서 쿠버네티스 시�
 
 그래서 컨트롤 플레인이 위치하는 kube-system 네임스페이스에도 따로 접근을 막는 설정을 해줘야한다.
 
-## ETCD
+## 9. ETCD
 
 
 ETCD는 current, desired state와 시크릿 데이터를 포함한 여러 핵심 데이터들을 저장하고 있는 클러스터 백엔드 데이터베이스이다.
@@ -158,15 +173,15 @@ ETCD는 current, desired state와 시크릿 데이터를 포함한 여러 핵심
 2. API서버만 접근할 수 있도록 방화벽과 RBAC을 설정
 
 하는 것이 좋다. 마치 프록시처럼 API서버를 거쳐야만 ETCD와 통신할 수 있도록 분리함으로써, API서버가 안전한 한 ETCD도 안전해지는 시스템을 구축할 수 있다.
+
 > 유일한 통신 채널인 ETCD와 API서버 간 통신 역시 꼭 TLS로 암호화해야한다.
 
-
-## Kubectl
+## 10. Kubectl
 
 
 kubectl은 쿠버네티스 클러스터를 관리할 수 있게해주는 CLI이다. 이 kubectl은 ./kube/config 파일에 저장되어있는 클러스터, 사용자, 네임스페이스, 인증 정책 정보를 활용한다. config 파일이 임의로 공격자에 의해 변경될 수 있기 때문에, 함부로 변경되지 않게 보호해야하고 권한이 없는 사용자가 접근하지 못하게 막아야한다.
 
-## Secret
+## 11. Secret
 
 
 secret(이하 시크릿)은 패스워드, SSH 키, OAuth 키 등, 여러 Credentials에 대한 데이터를 가지고 있기 때문에 잘 보호해야한다. 
@@ -175,17 +190,22 @@ secret(이하 시크릿)은 패스워드, SSH 키, OAuth 키 등, 여러 Credent
 1. 외부 key management service(KMS)를 통해 시크릿을 보호할 수 있고,
 2. data-at-rest 암호화를 통해 보호할 수도 있다. 
 
-data-at-rest는 전송중이지 않은(사용되지 않고 보관중인) 데이터를 의미한다. kube-apiserver config에 --encryption-provider-config 옵션을 설정해서 이 기능을 활성화할 수 있다. 이 기능을 활성화하면 사용중이지 않은 secret들이 암호화되어 보관되게 된다.
+data-at-rest는 전송중이지 않은(사용되지 않고 보관중인) 데이터를 의미한다. `kube-apiserver` config에 `--encryption-provider-config` 옵션을 설정해서 이 기능을 활성화할 수 있다. 이 기능을 활성화하면 사용중이지 않은 secret들이 암호화되어 보관되게 된다.
 
-이걸 적용한 후에 kubectl get secrets --all-namespaces -o json | kubectl replace -f - 커맨드를 입력해야 기존에 있던 data-at-rest들도 암호화가 적용된다.
+이걸 적용한 후에 
 
-## Cloud Infrastructure
+```
+kubectl get secrets --all-namespaces -o json | kubectl replace -f -
+```
+ 
+커맨드를 입력해야 기존에 있던 data-at-rest들도 암호화가 적용된다.
+
+## 12. Cloud Infrastructure
 
 
 클라우드 인프라를 사용한다면 해당 벤더에서 제공하는 가이드라인을 잘 지켜서 보안적인 위협이 없도록 해야한다.
 
-## Authentication and authorization
-
+## 13. 인가 / 인증
 
 authn, authz는 클러스터에 접근을 제한하는 중요한 메커니즘이다. 클러스터가 잘못 설정되어있으면 인증/인가 없이 DB에 API로 접근하는 등의 우회가 가능하다. 
 
@@ -199,12 +219,11 @@ automountServiceAccountToken를 false로 설정하면 어드미션 컨트롤러�
 
 이 시크릿은 API에 접근할 수 있는 Credentials가 들어있다. 이 시크릿(토큰)이 만약 암호화나 보안적으로 보호되고 있지 않으면 외부 공격자가 이 시크릿을 통해 무단으로 API에 접근할 수 있게 된다. 그래서 파드 시크릿은 RBAC으로 접근 권한을 제어해야한다.
 
-원래 default로는 토큰이 없어도 API 접근이 가능한데 RBAC 설정으로 이를 막아야하고, APIserver 설정 옵션으로 --anonymous-auth=false를 설정해서 annonymous request(토큰이 없는 요청)을 허용하지 않도록 설정해야한다.
+원래 default로는 토큰이 없어도 API 접근이 가능한데 RBAC 설정으로 이를 막아야하고, APIserver 설정 옵션으로 `--anonymous-auth=false를` 설정해서 annonymous request(토큰이 없는 요청)을 허용하지 않도록 설정해야한다.
 
-# Audit log
+## 14. Audit log
 
-
-audit log를 통해 서비스가 잘 작동중인지, 의도한대로 설정이 되었는지, 리소스를 얼마나 사용하고있는지 등을 확인할 수 있다. 그러나 쿠버네티스에서 네이티브로 풀 모니터링과 audit을 지원하지는 않는다.
+`audit log`를 통해 서비스가 잘 작동중인지, 의도한대로 설정이 되었는지, 리소스를 얼마나 사용하고있는지 등을 확인할 수 있다. 그러나 쿠버네티스에서 네이티브로 풀 모니터링과 audit을 지원하지는 않는다.
 
 시스템관리자는 효과적인 모니터/로깅 시스템을 구축해야한다. 로깅은 host, application, container, container engine, image registry, api-server, and the cloud 등 클러스터의 모든 레벨에 걸쳐서 수집되어야한다. 이렇게 전 레벨에 걸쳐 수집된 로그는 하나의 시스템으로 모아서 확인할 수 있어야한다.
 
@@ -219,7 +238,6 @@ RequestResponse 레벨에서의 로깅은 가장 많은 정보를 주는 레벨�
 이게 kubectl logs 로 확인하는 로그이다.
 
 ### Seccomp
-
 
 컨테이너의 시스템 콜을 audit하기 위해서는 seccomp 도구를 사용할 수 있다. default로는 disable 상태이다. seccomp를 통해서 시스템 콜을 제한할 수 있고, 커널과 관련해 공격 당할한만 영역(attack surface)을 낮출 수 있다.
 
@@ -263,7 +281,6 @@ fault tolerance는 실패에도 서비스가 망가지지 않고 버티는 것�
 
 쿠버네티스는 네이티브 alert 도구를 지원하지 않는다. 그래서 관리자가 적절한 alert 도구를 선정해서 긴급한 로그가 생성되었을 때 관리자와 클러스터에 알릴 수 있도록 쿠버네티스에 적용해야한다. 
 
-##  Reference
-
+## 15. References
 
 [Kubernetes Hardening Guide](https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF)

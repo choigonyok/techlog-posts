@@ -9,15 +9,13 @@
 1. Preamble
 2. Jaeger Architecture
 3. Sampling
-4. Reference
+4. References
 
 1. ## Preamble
 
+배울 점이 많은 오픈소스들을 찾아서, 서비스 아키텍처와 코드 구조를 분석하기로 했다.
 
-오픈 소스 프로젝트를 기획 및 설계하고 있다. 관련한 내용은 따로 포스트를 추가적으로 작성할 예정이다. 오픈소스 프로젝트를 성공적으로  설게 / 구현 / 배포하기 위해, 내가 개발하려는 소프트웨어와 공통점이 많고, 또 배울 점이 많은 오픈소스들을 찾아서, 서비스 아키텍처와 코드 구조를 분석하기로 했다.
-
-Kiali, RBAC-tool, FluxDB, Vertical Pod Autoscaler, Istio, etcd 등 다양한 오픈소스 프로젝트들을 찾아보다가 Jaeger을 소스 코드를 보게되었고, 아래와 같은 이유들로 Jaeger에 대해 깊이 알아보기로 했다.
-
+Kiali, RBAC-tool, FluxDB, Vertical Pod Autoscaler, Istio, etcd 등 다양한 오픈소스 프로젝트들을 찾아보다가 Jaeger의 소스 코드를 보게되었고, 아래와 같은 이유들로 Jaeger에 대해 깊이 알아보기로 했다.
 
 1. 상세한 아키텍처 구조를 설명해주는 공식문서
 2. Go standard directory structure 
@@ -27,7 +25,6 @@ Kiali, RBAC-tool, FluxDB, Vertical Pod Autoscaler, Istio, etcd 등 다양한 오
 
 2. ## Jaeger Architecture
 
-
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/62CA6542-E0E2-427F-9137-EE5A1DE9FC26/95C3F2AB-B363-40C0-B093-AA8A99C36852_2/UDaJWV6byg34lihPR9yQji4Rq5dVIVH4HHX4r8WkM3Ez/Image.png)
 
 Jaeger는 바이너리 파일 하나 안에서 전체가 동작하는 all-in-one 방식과 각 컴포넌트가 독립적으로 확장될 수 있는 MSA 방식으로 각각 설치가 가능하다.
@@ -35,7 +32,6 @@ Jaeger는 바이너리 파일 하나 안에서 전체가 동작하는 all-in-one
 Jaeger github 레포지토리에서 all-in-one 방식과 MSA 방식은 하나의 레포지토리에 통합되어있다. all-in-one 방식은 각 마이크로 서비스들을 하나의 all-in-one 소스 파일에 import해서 통합하는 방식으로 구성되어있다.
 
 ### Client
-
 
 jaeger-client는 OpenTracing-API를 사용한다. OpenTracing-API는 분산 시스템에서 트레이싱을 수행하기 위한 표준 API이다.
 
@@ -53,8 +49,7 @@ OpenTracing-API에 의해 측정되고있는 어플리케이션에 요청이 들
 
 트레이스가 샘플링이 될 때마다 해당하는 profiling data는 jaeger 백엔드로 전송되고, 샘플링되지 않은 트레이스면 profiling data를 전송하지 않는다. jaeger는 기본적으로 운영환경을 default로 생각하고 설계되어있기 때문에, 만약 개발단계 등에서 필요에 따라 profiling data 전송에서 발생하는 오버헤드를 줄이고 싶다면 샘플링 전략을 변경해서 샘플링되는 비율을 더 낮게 설정할 수 있다.
 
-## Sampling
-
+## 3. Sampling
 
 샘플링은 전체 트레이스 중 백엔드로 전송될 **일부** 트레이를을 선정하는 행위를 의미한다.
 
@@ -97,14 +92,7 @@ Jaeger는 트레이스 데이터를 저장하기 위한 스토리지로  플러�
 
 Query는 사용자(개발자)가 dashboard UI에 검색한 트레이스 데이터를 스토리지에서 조회해서 전달하는 역할을 한다. 말그대로 Query라는 이름이 딱 알맞다.
 
-## Summary
-
-
-Jaeger의 아키텍처에 대해 이해했으니 코드 리뷰를 진행하면서 Jaeger는 어떤 아키텍처로 구현을 했는지, 어떤 디자인 패턴들이 사용되었는지, 어떤 모델을 가지고있는지 등에 대해 알아볼 예정이다.
-
-또 추가적으로 빌드 프로세스 자동화를 위한 Makefile, hack 스크립트, e2e를 포함한 테스트 코드에 대해서도 깊이 알아볼 예정이다.
-
-##  Reference
+## 4. References
 
 
 [Jaeger Architecture](https://www.jaegertracing.io/docs/1.23/architecture)

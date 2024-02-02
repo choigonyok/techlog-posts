@@ -4,7 +4,6 @@
 [WriteTime: 2024-01-05]
 [ImageNames: 3c55c8e2-e27e-4dd7-b841-4b70bfb23e34.png]
 
-
 ## Content
 
 1. Preamble
@@ -17,12 +16,11 @@
 ## 1. Preamble
 
 
-Istio에서는 사이드카 프록시로 Envoy를 사용한다. 대부분의 Istio 기능은 Envoy를 추상화해서 한 단계 하이 레벨로 제공하지만, EnvoyFilter 등의 Istio CR(Custom Resource)을 통해 엔보이 프록시 기능 자체 또한 사용할 수 있도록 제공하고 있다.
+`Istio`에서는 사이드카 프록시로 `Envoy`를 사용한다. 대부분의 Istio 기능은 Envoy를 추상화해서 한 단계 하이 레벨로 제공하지만, EnvoyFilter 등의 Istio CR(Custom Resource)을 통해 엔보이 프록시 기능 자체 또한 사용할 수 있도록 제공하고 있다.
 
-따라서 Envoy에 대해서도 깊은 이해가 필요하고,  Istio 깃허브 이슈에도 EnvoyFilter와 관련된 이슈들이 많기 때문에, 컨트리뷰션을 위해 깊게 학습해봐야겠다고 생각했다.
+따라서 Envoy에 대해서도 깊은 이해가 필요하고,  Istio 깃허브 이슈에도 `EnvoyFilter`와 관련된 이슈들이 많기 때문에, 컨트리뷰션을 위해 깊게 학습해봐야겠다고 생각했다.
 
 ## xDS
-
 
 엔보이는 Istio에서 서비스 메시를 구현하기 위한 사이드가 프록시로 사용된다. Pod마다 엔보이 프록시가 주입되어 수많은 엔보이 프록시가 배포되는데, 설정 관리를 용이하게 하기 위해 엔보이 프록시는 자체적으로 구성관리를 하지 않고 중앙화된 외부 서버나 파일시스템을 통해 구성을 관리하게된다.
 
@@ -34,7 +32,6 @@ Istio에서는 사이드카 프록시로 Envoy를 사용한다. 대부분의 Ist
 
 xDS 프로토콜의 API는 네 가지로 구분된다.
 
-
 - ADS (Aggregated Discovery Service)
 - CDS (Cluster Discovery Service)
 - LDS (Listner Discovery Service)
@@ -44,7 +41,6 @@ xDS 프로토콜의 API는 네 가지로 구분된다.
 해당 API들에 대해서는 아래에서 자세히 설명한다.
 
 ## xDS의 장점
-
 
 일반적인 HTTP 프로토콜이 아닌 xDS 프로토콜을 사용하는 이유는 아래와 같다.
 
@@ -117,11 +113,9 @@ CDS, LDS, EDS, RDS로 다양하게 업데이트된 API들을 한 번에 모아�
 
 ## gRPC & Protocol Buffer
 
-
 ### gRPC
 
-
-gRPC는 google Remote Procedure Call 의 준말로, HTTP/2를 기반으로하는 원격 프로시저 호출 시스템 프레임워크이다. REST API는 **리소스**에 대한 행위를 기반으로한다. GET /posts 라면, 게시글 전체를 조회한다는 의미가 된다.
+`gRPC`는 google Remote Procedure Call의 준말로, HTTP/2를 기반으로하는 원격 프로시저 호출 시스템 프레임워크이다. REST API는 `리소스`에 대한 행위를 기반으로한다. GET /posts 라면, 게시글 전체를 조회한다는 의미가 된다.
 
 이에 반해 gRPC는 리소스 중심이 아니라 메서드 중심이다. 
 

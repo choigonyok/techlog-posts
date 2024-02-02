@@ -402,19 +402,15 @@ spec:
 
 ## 8. 코드베이스 수정을 위한 Issue Assign 요청
 
-
 위의 과정들을 통해 이 이슈가 그저 Istio를 미숙하게 다루는데에서 생기는 실수가 아니라 소프트웨어적 버그 혹은 아직 구현되지 않은 것으로 판단하게 되었고, 평소 Isito 레포에서 가장 활발히 활동하던 Istio 메인테이너를 호출해서 이 이슈를 할당해달라고 요청했다.
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/D918083C-9D83-4FF0-B11F-9ECC4DD9064D/C7D1B486-D7E1-4B00-8A6B-20E1BA369168_2/8x0C65teE5IF9wulVniblinfnCaGtBYn06FEe8Z3xHMz/Image.png)
 
 ![image](https://res.craft.do/user/full/6deb5b3a-d995-5f97-e85b-e7c3c5f9702a/doc/D918083C-9D83-4FF0-B11F-9ECC4DD9064D/E5DE0CAA-6F29-4AEA-A95D-55A5EE933C6D_2/3PLKoZe522Z0LNRghLrm8ryv4uLcJrDy6gkMYnYcqn8z/Image.png)
 
-메인테이너가 아직 구현되지 않은 것이 아니라 버그인 것 같다는 답변을 달아주었고, 관련해서 버그를 찾아서 직접 고쳐보기로 했다.
-
-이 이슈를 해결해나가는 과정을 앞으로 글로 쭉 써볼 예정이다.
+메인테이너가 아직 구현되지 않은 것이 아니라 버그인 것 같다는 답변을 달아주었고, 관련해서 다른 컨트리뷰터가 작성하고 있는 PR 링크를 첨부해주었다. 앞으로 이 PR에서 변경된 사항들을 살펴보면서, 새로은 기능의 도입으로 인해 생길 수 있는 새로운 버그들을 찾아 고쳐나가볼 예정이다.
 
 ## 9. References
-
 
 [Issue - Istio CNI blocks traffic in application init containers](https://github.com/istio/istio/issues/48854)
 
