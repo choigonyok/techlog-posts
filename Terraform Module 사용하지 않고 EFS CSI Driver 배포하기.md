@@ -2,7 +2,7 @@
 [Tags: CLOUD INFRA KUBERNETES OPS]
 [Title: Terraform Module 사용하지 않고 EFS CSI Driver 배포하기]
 [WriteTime: 2023/11/24]
-[ImageNames: ]
+[ImageNames: eaac0525-8c8f-46e6-aefb-c8a40c76afhr.png]
 
 ## Content
 
@@ -15,7 +15,7 @@
 7. STS란?
 8. [TroubleShooting] WebIdentityErr
 9. 전체 테라폼 코드
-10. Summary
+10. References
 
 ## 1. Preamble
 
@@ -459,15 +459,7 @@ resource "aws_iam_role" "iamrole" {
 }
 ```
 
-
-## 10. Summary
-
-
-트러블 슈팅 과정에서 module 없이 resource 만으로 efs csi driver를 프로비저닝하고 권한을 부여해주는 경험을 해보길 잘 했다는 생각을 했다.
-
-애를 많이 먹었지만 이 과정을 통해 EFS, CSI, IAM에 대해 더 깊게 이해할 수 있었던 것 같다. 이런 scratch한 지식을 가진 상태에서 module 등의 편한 방식을 사용하는 것과, 그냥 처음부터 원리는 모르고 바로 편하고 간단한 길로 가는 것은 다르다고 생각한다.
-
-## References
+## 10. References
 
 
 [AWS Official Docs](https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/efs-csi.html) : Amazon EFS CSI 드라이버

@@ -2,7 +2,7 @@
 [Tags: TERRAFORM, AWS, KUBERNETES]
 [Title: Terraform으로 EKS에 AWS Loadbalancer Controller 배포하기]
 [WriteTime: 2023/11/17]
-[ImageNames: ]
+[ImageNames: d3ef3b3d-e78b-4e99-a76d-e64a3b3bbdsa.png]
 
 ## Contents
 
@@ -10,10 +10,8 @@
 2. 굳이 Loadbalancer 타입 서비스를 사용하는 이유
 3. aws-load-balancer-controller란?
 4. Terraform 구현
-5. Summary
 
 ## 1. Preamble
-
 
 기술 블로그 어플리케이션을 위해 kubeadm으로 구성되어있던 쿠버네티스 클러스트를 EKS로 이전하는 과정에서 Loadbalancer 타입 서비스 오브젝트를 사용하기로 했다. 그 과정에서 IRSA 설정과 aws-load-balancer-controller를 배포해야했는데, 이를 테라폼으로 구현한 예시를 찾아보기가 힘들었고 그나마 참고할만한 글들도 테라폼이 업그레이드 됨에 따라 대부분 적용되지 않는 문제가 있어 꽤나 애써서 해결한 결과물을 공유하려고한다.
 
@@ -67,7 +65,7 @@ aws-load-balancer-controller(이하 컨트롤러)는 Loadbalancer 타입 서비�
 
 EKS에서는 쿠버네티스 클러스터와 AWS IAM Role을 연결시킬 수 있는 기능을 제공한다. EKS에서 제공되는 OIDC Provider와 IAM Role, 그리고 그 IAM Role을 연결할 쿠버네티스의 ServiceAccount 리소스만 지정하면 쿠버네티스에서 ServiceAccount에 지정된 Pod들은 IAM Role에 할당된 권한을 가질 수 있게된다.
 
-### Annotation
+### Annotation
 
 
 2번을 만족시키기 위해서는 쿠버네티스 서비스 리소스에 정의되는 annotation을 사용할 수 있다.
@@ -216,12 +214,3 @@ resource "helm_release" "nlb-pod" {
     }
 }
 ```
-
-
-## 5. Summary
-
-
-Terraform으로 aws-load-balancer-controller를 설정/생성하는 방법에 대해 정리해보았다. 외부에서의 접근이 정상적으로 이루어지는지 테스트를 위해 Jenkins Pod를 배포했지만, 만약 예시처럼 NLB를 생성한다면 L7에서의 로드밸런싱을 위해 Ingress Controller나 Ingress Gateway, API Gateway 등의 구성이 추가적으로 필요할 것이다.
-
-
-- ALB가 아닌 NLB를 사용한 이유

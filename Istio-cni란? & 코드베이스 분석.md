@@ -2,7 +2,7 @@
 [Tags: istio golang kubernetes]
 [Title: Istio-cni란? & 코드베이스 분석]
 [WriteTime: 2024-01-17]
-[ImageNames: e056ddbd-ff9c-1234-be3b-b8510c9d99ac.png.png]
+[ImageNames: e056ddbd-ff9c-1234-be3b-b8510c9d99ac.png]
 
 ## Content
 
