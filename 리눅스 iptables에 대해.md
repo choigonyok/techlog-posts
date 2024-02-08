@@ -1,8 +1,10 @@
 [ID: 59]
-[Tags: Istio network]
+[Tags: ISTIO NETWORK]
 [Title: 리눅스 iptables에 대해]
 [WriteTime: 2024-01-28]
 [ImageNames: 5cff130e-a27f-4081-b0fc-1156fbff73d6.png]
+[Subtitle: istio-cni 원리를 파악해보자]
+
 
 ## Contents
 
