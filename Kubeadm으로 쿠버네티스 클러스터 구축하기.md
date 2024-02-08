@@ -3,6 +3,8 @@
 [Title: Kubeadm으로 쿠버네티스 클러스터 구축하기]
 [WriteTime: 2023-06-24]
 [ImageNames: b9d12434-7b7e-4545-a245-3956bea74a8b.png]
+[Subtitle: 마스터/워커노드 구성을 위한 배시 스크립트 작성]
+
 
 ## Contents
 
@@ -85,7 +87,7 @@ EOF
 ```
 
 
-`/etc/modules-load.d/k8s.conf` 파일을 생성해서 내용에 `overlay\n br_netfilter` 이라는 스트링을 넣는 커맨드이다.
+`/etc/modules-load.d/k8s.conf` 파일을 생성해서 내용에 `overlay\\n br_netfilter` 이라는 스트링을 넣는 커맨드이다.
 
 리눅스에서는 부팅이 될 때 `/etc/modules-load.d` 디렉토리에 존재하는 모든 파일들을 읽어서, 해당 파일들에 명시되어있는 모든 커널 모듈들을 로드하는 작업을 수행한다. 서버가 종료되었다가 다시 실행되더라도 이 파일을 통해 알아서 필요한 커널 모듈들이 로드되도록 설정해두는 것이다.
 
@@ -212,7 +214,7 @@ runc는 실질적으로 Low Level에서 container 관련 기능을 수행하는 
 
 ```bash
 containerd config default | sudo tee /etc/containerd/config.toml
-sudo sed -i 's/SystemdCgroup \\= false/SystemdCgroup \\= true/g' /etc/containerd/config.toml
+sudo sed -i 's/SystemdCgroup \\\\= false/SystemdCgroup \\\\= true/g' /etc/containerd/config.toml
 ```
 
 
@@ -357,7 +359,7 @@ wget https://github.com/opencontainers/runc/releases/download/v1.1.8/runc.amd64
 sudo install -m 755 runc.amd64 /usr/local/sbin/runc
 sudo mkdir -p /etc/containerd/
 containerd config default | sudo tee /etc/containerd/config.toml
-sudo sed -i 's/SystemdCgroup \\= false/SystemdCgroup \\= true/g' /etc/containerd/config.toml
+sudo sed -i 's/SystemdCgroup \\\\= false/SystemdCgroup \\\\= true/g' /etc/containerd/config.toml
 sudo systemctl restart containerd
 sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
