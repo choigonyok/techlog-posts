@@ -3,7 +3,7 @@
 [Title: 리눅스 iptables에 대해]
 [WriteTime: 2024-01-28]
 [ImageNames: 5cff130e-a27f-4081-b0fc-1156fbff73d6.png]
-[Subtitle: istio-cni 원리를 파악해보자]
+[Subtitle: Envoy 사이드카가 트래픽을 인터셉트하는 원리]
 
 
 ## Contents
