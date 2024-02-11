@@ -3,6 +3,8 @@
 [Title: Golang에서 AWS S3 파일 업다운로드 구현하기]
 [WriteTime: 2024-01-18]
 [ImageNames: 81326447-1234-45be-bd98-5e6bf3707d15.png]
+[Subtitle: 블로그의 이미지 파일들을 AWS S3로 관리하자!]
+
 		
 ## Content
 
@@ -87,7 +89,7 @@ func Upload(f *multipart.FileHeader, imageName string) error {
 	if err != nil {
 		return fmt.Errorf("failed to upload file, %v", err)
 	}
-	fmt.Printf("file uploaded to, %s\\\\n", aws.StringValue(&result.Location))
+	fmt.Printf("file uploaded to, %s\\\\\\\\n", aws.StringValue(&result.Location))
 	return nil
 }
 ```
